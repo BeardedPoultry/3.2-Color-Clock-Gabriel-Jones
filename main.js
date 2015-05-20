@@ -15,10 +15,10 @@ function getTotalTime() {
   $timeCurrent.textContent = hours + " : " + minutes + " : " + seconds;
   
   console.log(hours, minutes, seconds);
-  
   hexColor = ("#"+hours+minutes+seconds);
   document.body.style.background=hexColor;
 }
+
 function changingLine() {
   var currentTime = new Date();
   var seconds = currentTime.getSeconds();
@@ -26,11 +26,10 @@ function changingLine() {
   var widthLine = percentLine + "%";
   $line.style.width = widthLine;
 }
-
-getTotalTime();
 setInterval(getTotalTime, 1000);
-var ProgressBar = $seconds;
-var line = new ProgressBar.Line('#example-line-container', {
-    color: '#FCB03C'
+changingLine();
+getTotalTime();
 
-});
+function name(params) {
+  
+}
