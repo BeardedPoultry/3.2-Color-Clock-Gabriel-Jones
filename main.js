@@ -1,6 +1,6 @@
 var timeNow;
 var $timeCurrent = document.querySelector(".timeCurrent");
-
+var hexColor; 
 function getTotalTime() {
   
   var currentTime = new Date();
@@ -15,6 +15,16 @@ function getTotalTime() {
   $timeCurrent.textContent = hours + " : " + minutes + " : " + seconds;
   
   console.log(hours, minutes, seconds);
+  
+  hexColor = ("#"+hours+minutes+seconds);
+  document.body.style.background=hexColor;
+}
+function changingLine() {
+  var currentTime = new Date();
+  var seconds = currentTime.getSeconds();
+  var percentLine = (seconds/60)*100;
+  var widthLine = percentLine + "%";
+  $line.style.width = widthLine;
 }
 
 getTotalTime();
@@ -24,5 +34,3 @@ var line = new ProgressBar.Line('#example-line-container', {
     color: '#FCB03C'
 
 });
-
-line.animate(1.0);
